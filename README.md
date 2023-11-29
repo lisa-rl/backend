@@ -12,3 +12,9 @@ Lignes de commandes:
 - git commit -m "#numero issue <issue>"
 
 Pour rendre un fichier exécutable (notamment gradlew): git update-index --chmod=+x gradlew
+
+Docker:
+-	./gradlew bootJar                                   --> crée un dossier libs et création d'un fichier .jar
+- java -jar build\libs\server.jar                     --> execute programme
+-	docker build --tag=server:latest .                  --> génère une image
+-	docker run -d -p 8080:8080 server                   --> génère un conteneur (on obtient le PID du conteneur)
