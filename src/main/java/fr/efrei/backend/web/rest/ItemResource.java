@@ -3,6 +3,7 @@ package fr.efrei.backend.web.rest;
 import fr.efrei.backend.domain.Item;
 import fr.efrei.backend.service.ItemService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +22,12 @@ public class ItemResource {
   @GetMapping("/items")
   public List<Item> test() {
     return itemService.findAll();
+  }
+
+  @GetMapping("/items/{id}")
+  public Item getItem(@PathVariable String id) {
+    Item item = new Item();
+    item.setName("Pierre");
+    return item;
   }
 }
